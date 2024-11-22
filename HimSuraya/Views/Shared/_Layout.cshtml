@@ -3,11 +3,47 @@
 <head>
     <style>
 
-        #navbarCollapse
+       #navbarCollapse
         {
-            background-color: rgb(118, 34, 34);
-        }
-    </style>
+            background-color: #e53935; /* Bright red for a bold and striking look */
+            color: white;
+        }  
+      
+       
+       .college-name-container 
+       {
+         background: linear-gradient(90deg, #e53935, #c62828);
+         color:#555555
+         padding: 15px 0;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+       }
+.college-name {
+
+    font-family:Arial
+    font-size: 3rem; /* Even larger font size for prominence */
+    font-weight: 500;
+    letter-spacing: 0.15em; /* More spacing between letters */
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.2; /* Adjust line height for alignment */
+    text-align: center; /* Ensure centered alignment */
+    color: #fff; /* Maintain white text for contrast */
+    width: 90%; /* Spans the full container width */
+}
+
+.college-logo {
+    width: 6em; /* Further increased width for a more noticeable logo */
+    height: 6em; /* Height matches width for a circular logo */
+    border-radius: 50%; /* Circular logo */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    object-fit: cover; /* Ensure the image fits nicely */
+    margin-right: 20px; /* Slightly larger margin for spacing */
+}
+
+
+</style>
     <!-- Customized Bootstrap Stylesheet -->
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
   
@@ -16,27 +52,37 @@
     <!-- Icon Font Stylesheet -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <!---libraries stylesheet->
 
-    <!-- Libraries Stylesheet -->
-     <link href="~/lib/animate/animate.min.css" rel="stylesheet" />
-    <link href="lib/animate/animate.min.css" rel="stylesheet">
-    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> 
+    <link href="~/lib/animate/animate.min.css" rel="stylesheet" />
+    <link href="~/lib/animate/animate.min.css"  rel="stylesheet"/>
+    <link href="~/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet"> 
 
     <!-- Template Stylesheet -->
-    <link href="css/style.css" rel="stylesheet">
+    <link href="~/css/style.css" rel="stylesheet">
 </head>
 <body>
     <header>
+         <!-- College Name Section -->
+@*      <div class="college-name-container d-flex align-items-center justify-content-center bg-primary py-3">
+        <img src="~/img/logo.jpg" alt="College Logo" class="college-logo me-3">
+        <h1 class="college-name text-white m-0">Himsurya Institute of Technology</h1>
+   </div> *@
         <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-            <a href="index.html" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
-                <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>eLEARNING</h2>
+            <a href="Index.cshtml" class="navbar-brand d-flex align-items-center px-4 px-lg-5">
+                <h2 class="m-0 text-primary"><i class="fa fa-book me-3"></i>Himsurya Institute of Technology</h2>
             </a>
             <button type="button" class="navbar-toggler me-4" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto p-4 p-lg-0">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                <div class="navbar-nav ms-auto p-4 p-lg-0" style="border-radius:4px">
+
+@*                     @Html.ActionLink("Home","Index","Home",new{@class="nav-item nav-link"})
+ *@
+                    @Html.ActionLink("Home", "Index", "Home",null,new { @class = "nav-item nav-link" })
+
                     <a href="about.html" class="nav-item nav-link">About</a>
                     <a href="courses.html" class="nav-item nav-link">Courses</a>
                     <div class="nav-item dropdown">
@@ -49,16 +95,20 @@
                     </div>
                     <a href="contact.html" class="nav-item nav-link">Contact</a>
                 </div>
-                <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a>
+               @*  <a href="" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Join Now<i class="fa fa-arrow-right ms-3"></i></a> *@
             </div>
         </nav>
+     
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    
+<div style="clear:both"></div>
+    <div>
+        <main role="main">
             @RenderBody()
         </main>
     </div>
-
+    
+<div style="clear:both"></div>
     <footer class="border-top footer text-muted">
         <div class="container-fluid bg-dark text-light footer pt-5 mt-5 wow fadeIn" data-wow-delay="0.1s">
             <div class="container py-5">
@@ -73,13 +123,17 @@
                     </div>
                     <div class="col-lg-3 col-md-6">
                         <h4 class="text-white mb-3">Contact</h4>
-                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</p>
-                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+012 345 67890</p>
-                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@example.com</p>
+                        <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Gyanpur Road kusiyara Tiraha       Bhadohi:221401</p>
+                        <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>7398293485,8423254511</p>
+                        <p class="mb-2"><i class="fa fa-envelope me-3"></i>himsurya2017@gmail.com</p>
+
+
                         <div class="d-flex pt-2">
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-twitter"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-facebook-f"></i></a>
-                            <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-youtube"></i></a>
+                            <a class="btn btn-outline-light btn-social" href="https://www.facebook.com/profile.php?id=100071565052293&mibextid=ZbWKwL"><i class="fab fa-facebook-f"></i></a>
+                            
+                            <a class="btn btn-outline-light btn-social" target="_blank" href="https://www.youtube.com/%40himsuryainstitute1343"><i class="fab fa-youtube"></i></a>
+                           
                             <a class="btn btn-outline-light btn-social" href=""><i class="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
@@ -87,22 +141,22 @@
                         <h4 class="text-white mb-3">Gallery</h4>
                         <div class="row g-2 pt-2">
                             <div class="col-4">
-                                <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
+                                <img class="img-fluid bg-light p-1" src="~/img/course-1.jpg" alt="">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
+                                <img class="img-fluid bg-light p-1" src="~/img/course-2.jpg" alt="">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
+                                <img class="img-fluid bg-light p-1" src="~/img/course-3.jpg" alt="">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid bg-light p-1" src="img/course-2.jpg" alt="">
+                                <img class="img-fluid bg-light p-1" src="~/img/course-2.jpg" alt="">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid bg-light p-1" src="img/course-3.jpg" alt="">
+                                <img class="img-fluid bg-light p-1" src="~/img/course-3.jpg" alt="">
                             </div>
                             <div class="col-4">
-                                <img class="img-fluid bg-light p-1" src="img/course-1.jpg" alt="">
+                                <img class="img-fluid bg-light p-1" src="~/img/course-1.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -114,7 +168,7 @@
                             <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2">SignUp</button>
                         </div>
                     </div>
-                </div>
+                </div
             </div>
             <div class="container">
                 <div class="copyright">
@@ -127,7 +181,7 @@
                         </div>
                         <div class="col-md-6 text-center text-md-end">
                             <div class="footer-menu">
-                                <a href="">Home</a>
+                                <a href="Index.cshtml">Home</a>
                                 <a href="">Cookies</a>
                                 <a href="">Help</a>
                                 <a href="">FQAs</a>
@@ -141,13 +195,13 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>   
-    <script src="lib/wow/wow.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/waypoints/waypoints.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="~/lib/wow/wow.min.js"></script>
+    <script src="~/lib/easing/easing.min.js"></script>
+    <script src="~/lib/waypoints/waypoints.min.js"></script>
+    <script src="~/lib/owlcarousel/owl.carousel.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="~/js/main.js"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
